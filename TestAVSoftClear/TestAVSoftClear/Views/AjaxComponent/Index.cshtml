@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "_Layout";
+}
+<h2>Ajax-Запрос получение таблицы №1</h2>
+
+<p><a href="/AjaxComponent/Create">Добавить</a></p>
+
+<table id="table">
+    
+    
+</table>
+
+@*Ajax-запрос вывода таблицы №1*@
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("GetTable")",
+                dataType: "text",
+                success: function (data) {
+                    const VTable = document.getElementById("table");
+                    VTable.innerHTML = data;
+                }
+            });
+        });
+    </script>
+}

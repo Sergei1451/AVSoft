@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model IQueryable<dynamic>
+
+<h2>Страница Razor-pages получение таблицы №2</h2>
+    <table>
+        <tr><th>KEY</th><th>COUNT</th><th>COUNTMORETHENONE</th></tr>
+        @foreach (var i in Model)
+        {
+            <tr><td>@i.Key</td><td>@i.Count</td><td>@i.CountMoreOne</td></tr>
+        }
+    </table>
+

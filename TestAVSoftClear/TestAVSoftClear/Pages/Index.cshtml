@@ -1,0 +1,14 @@
+﻿@page
+@model TestAVSoftClear.Pages.IndexModel
+@{
+    Layout = "_Layout";
+}
+<h2>Страница Razor-pages получение таблицы №1</h2>
+<p><a href="/Create">Добавить</a></p>
+<table>
+    <tr><th>ID</th><th>KEY</th><th>VALUE</th></tr>
+    @foreach (var counter in Model.Counters)
+    {
+        <tr><td>@counter.ID</td><td>@counter.KEY</td><td>@counter.VALUE</td></tr>
+    }
+</table>

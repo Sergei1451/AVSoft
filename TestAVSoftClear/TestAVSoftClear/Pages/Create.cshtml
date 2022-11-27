@@ -1,0 +1,18 @@
+﻿@page
+@model TestAVSoftClear.Pages.CreateModel
+@{
+    Layout = "_Layout";
+}
+<h2>Страница Razor-pages заполнение таблицы №1</h2>
+<p><a href="/Index">Просмотреть</a></p>
+<form method="post">
+    <p>
+        <label>KEY</label><br />
+        <input name="KEY" type="number" />
+    </p>
+    <p>
+        <label>VALUE</label><br />
+        <input name="VALUE" type="number" />
+    </p>
+    <input type="submit" value="Отправить" />
+</form>

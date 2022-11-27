@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<h2>Ajax-Запрос заполнение таблицы №1</h2>
+
+<p><a href="/AjaxComponent/Index">Просмотреть</a></p>
+
+<form id="form1">
+    <p>
+        <label>KEY</label><br />
+        <input name="KEY" type="number" id="KEY" />
+    </p>
+    <p>
+        <label>VALUE</label><br />
+        <input name="VALUE" type="number" id="VALUE" />
+    </p>
+    <input type="submit" id="button1">
+</form>
+
+
+
+@*Ajax-запрос заполнения таблицы №1 данными с формы*@
+@section Scripts{
+    <script>
+        $("#button1").click(function () {
+            formData = {
+                KEY: $("#KEY").val(),
+                VALUE: $("#VALUE").val(),
+            }
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("AddData")",
+                dataType: "json",
+                data: formData,
+                success: function () {
+                    console.log("Ok")
+                },
+                error: function (req, status, error) {
+                    console.log(status)
+                }
+            });
+        })
+    </script>
+}
